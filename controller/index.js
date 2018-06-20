@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-var lc = require('./languageController');
+var lc = require('./categoryController');
+var lang = require('./languageController');
 
-router.get('/languages',lc.getLanguages);
+router.get('/category',lc.getCategories);
+router.get('/language',lang.getLangs);
 
 module.exports = router;
