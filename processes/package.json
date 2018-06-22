@@ -1,0 +1,20 @@
+{
+  "name": "learn_node",
+  "description": "A project for internship",
+  "author": "Tarun",
+  "version": "0.4.3",
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "express": "^4.16.3",
+    "feedparser": "*",
+    "forever": "^0.15.3",
+    "mysql": "^2.15.0",
+    "request": "*",
+    "scrape-metadata": "^2.0.0",
+    "sync-each": "^1.0.1"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "*"
+  }
+}
