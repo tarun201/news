@@ -15,7 +15,7 @@ var con = mysql.createConnection({
 ex();
 
 function ex() {
-	var sql = "select link,id from updates limit 5";
+	var sql = "select link,id from updates where is_deleted=0";
 	con.query(sql, function (err, result) {
 		if (err) throw err;
 		urlfeed = result;
@@ -89,7 +89,7 @@ function ex() {
 		
 			setTimeout(function(){
 				ex();
-			},3600000);
+			},10000);
 		})
 
 
