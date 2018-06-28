@@ -4,12 +4,33 @@ const linkStyle = {
   marginRight: 15
 }
 
-const Navbar = () => (
+const Header = () => (
   <div>
-    <Link href="javascript:void(0)"><a class="active" >Home</a></Link>
-    <Link href="javascript:void(0)"><a>News</a></Link>
-    <Link href="javascript:void(0)"><a>Contact</a></Link>
+    <Link href="/">
+      <a style={linkStyle}>Home</a>
+    </Link>
+    {/* <Link href="/about">
+      <a style={linkStyle}>About</a>
+    </Link> */}
+    <style jsx>{`
+      a {
+        text-decoration: none;
+        color: whitesmoke;
+      }
+      a:hover {
+        opacity: 0.6;
+      }
+      div{
+        background: black;
+        padding: 0.5%;
+        margin-bottom: 0.5%;
+        border-radius: 5px;
+        padding-left: 3%;
+        position: fixed;
+        width: 95%;
+      }
+    `}</style>
   </div>
 )
 
-export default Navbar
+export default Header
