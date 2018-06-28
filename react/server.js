@@ -9,7 +9,7 @@ app.prepare()
 .then(() => {
   const server = express()
 
-  server.get('/category/:id', (req, res) => {
+  server.get('/news/:id', (req, res) => {
     const actualPage = '/category'
     const queryParams = { id: req.params.id }
     app.render(req, res, actualPage, queryParams)

@@ -1,10 +1,17 @@
-import Blayout from '../components/basic_layout'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 
 const Rightbar = (props) => (
     <div className="right">
         <h3>Categories</h3>
+        {props.categories.map(({ category }) => (
+            <div className='list' key={category}>
+                <span className='categories'>
+                    {category}
+                </span>
+            </div>
+        ))}
+        
     
 <style jsx>{`
     div{
@@ -22,6 +29,16 @@ const Rightbar = (props) => (
 </div>
 )
 
+Rightbar.getInitialProps = async function () {
+    const res = await fetch(`http://localhost:8080/category`)
+    const data = await res.json()
+  
+    console.log(`Show data fetched. Count: ${data.length}`)
+  
+    return {
+      categories: data
+    }
+  }
 
 
 export default Rightbar

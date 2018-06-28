@@ -1,8 +1,7 @@
 import Navbar from './navbar'
 // import Header from './header'
 import Rightbar from './rightbar'
-
-
+import Footer from './footer'
 
 const Blayout = (props) =>(
     <div className="body">
@@ -10,6 +9,7 @@ const Blayout = (props) =>(
       <Navbar />
       {props.children}
       <Rightbar />
+      <Footer />
       <style jsx>{`
       .body{
         width:100%;

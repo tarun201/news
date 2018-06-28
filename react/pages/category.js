@@ -1,12 +1,13 @@
 import Blayout from '../components/basic_layout'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
+
 const Category = (props) => (
   <Blayout>
       <div className="content">
         <h1>News</h1>
         {/* loop for each news */}
-        {props.news.map(({ title, link, date, id, category, image }) => (
+        {props.news.map(({ title, link, date,time, id,image }) => (
           <div className="news" key={id}>
           {/* Image for a news */}
             <div className="image">
@@ -18,6 +19,7 @@ const Category = (props) => (
                 <a className="title"><h3>{title}</h3></a>
               </Link>
               <p><span>Date:</span> {date}</p>
+              <p><span>Date:</span> {time}</p>
             </div>
             <hr />
           </div>
@@ -43,9 +45,14 @@ div.content{
     font-family: 'Times New Roman';
     margin-bottom: 1%;
 }
+div.news{
+  vertical-align: middle;
+}
+
 div.info{
     display: inline-block;
     width: 70%;
+    text-align: justify;
   }
   div.image{
     display: inline-block;
@@ -75,7 +82,6 @@ div.info{
 )
 
 Category.getInitialProps = async function (context) {
-  const id=context.query.category;
   const res = await fetch(`http://localhost:8080/news/category/${id}`)
   const data = await res.json()
 

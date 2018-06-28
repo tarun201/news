@@ -8,7 +8,7 @@ const Index = (props) => (
     <div className="content">
     <h1>News</h1>
         {/* loop for each news */}
-        {props.news.map(({ title, link, date, id, category, image }) => (
+        {props.news.map(({ title, link, date,time, id, category, image }) => (
           <div className="news" key={id}>
           {/* Image for a news */}
             <div className="image">
@@ -20,9 +20,10 @@ const Index = (props) => (
                 <a className="title"><h3>{title}</h3></a>
               </Link>
               <p><span>Date:</span> {date}</p>
+              <p><span>Time:</span> {time}</p>
 
               <span>Category: </span>
-              <Link href={`/category?category=${category}`}>
+              <Link as={`/news/${category}`} href={`/category?id=${category}`}>
                 <a className="category">{category}</a>
               </Link>
 
@@ -37,22 +38,25 @@ const Index = (props) => (
         color: rgb(199, 50, 50);
     }
 
+    div.news{
+      vertical-align: middle;
+    }
+
     div.content{
         overflow: auto;
         margin-top:3%;
         width: 50%;
-        display: inline-block;
         float: left;
         margin-left: 5%;
         padding: 2%;
         border: 1px solid black;
         border-radius: 10px;
         font-family: 'Times New Roman';
-        margin-bottom: 1%;
     }
     div.info{
         display: inline-block;
         width: 70%;
+        text-align: justify;
       }
       div.image{
         display: inline-block;

@@ -27,7 +27,7 @@ const Header = () => (
         border-radius: 5px;
         padding-left: 3%;
         position: fixed;
-        width: 95%;
+        width: 100%;
       }
     `}</style>
   </div>
