@@ -13,7 +13,14 @@ app.prepare()
     const actualPage = '/category'
     const queryParams = { id: req.params.id }
     app.render(req, res, actualPage, queryParams)
-})
+  })
+
+  server.get('/lang/:id', (req, res) => {
+    console.log(req.params.id);
+    const actualPage = '/language'
+    const queryParams = { id: req.params.id }
+    app.render(req, res, actualPage, queryParams)
+  })
 
   server.get('*', (req, res) => {
     return handle(req, res)
