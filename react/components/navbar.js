@@ -1,33 +1,32 @@
+import React from 'react'
 import Link from 'next/link'
 
-const linkStyle = {
-  marginRight: 15
-}
-
 const Navbar = () => (
-  <div className="navbar-fixed">
-    
-  <nav>
-    <div className="nav-wrapper">
-      <a href="#!" className="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-      <ul className="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div>
+    <nav className="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <Link href="/"><a className="navbar-brand" >News</a></Link>
 
-  <ul className="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-  </ul>
-          
-  </div>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+
+      <div className="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link href="/">
+            <a className="nav-link" href="#">Home</a>
+            </Link>
+          </li>
+          {/* <li className="nav-item">
+            <a className="nav-link" href="#">Link</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">Link</a>
+          </li> */}
+        </ul>
+      </div>
+    </nav>
+  </div >
 )
 
 export default Navbar

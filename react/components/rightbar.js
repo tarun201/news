@@ -1,27 +1,15 @@
 const Rightbar = (props) => (
-    <div className="main">
-        <p>Categories</p>
-        <div className="list">
-            {props.children}
+    <div className="main col-sm ">
+        <div class="container position-fixed  h-100">
+        <h4 ><span className="text-info">Categories </span><span className="small text-secondary">(scroll down)</span></h4>
+        <nav class="navbar pre-scrollable h-100 text-center">
+            <ul className="nav flex-column">
+                <li className="nav-item">
+                    {props.children}
+                </li>
+            </ul>
+        </nav>
         </div>
-            
-        <style jsx>{`
-        div.main{
-            margin-top:3%;
-            width: 30%;
-            display: inline-block;
-            float: left;
-            margin-left: 1%;
-            padding: 2%;
-        }
-        div.list{
-            text-align: justify;
-            line-height: 1.5;
-        }
-        p{
-            font-size: 20px;
-        }
-        `}</style>
     </div>
 )
 

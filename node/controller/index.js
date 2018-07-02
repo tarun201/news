@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var category = require('./categoryController');
+var category_lang = require('./category_langController');
 var lang_category=require('./lang_categoryController');
 var lang = require('./languageController');
 var dates=require('./dateController');
@@ -13,6 +14,7 @@ var lo=require('./loController');// lo -> Limit Offset
 var news=require('./newsController');
 
 router.get('/category',category.getCategories);
+router.get('/category/:lang',category_lang.getCategories);
 router.get('/language',lang.getLangs);
 router.get('/date',dates.getDates);
 router.get('/category/:lang',lang_category.getCategories);
