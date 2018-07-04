@@ -3,6 +3,7 @@ var router = express.Router();
 
 var category = require('./categoryController');
 var category_lang = require('./category_langController');
+var category_cat = require('./category_catController');
 var lang_category=require('./lang_categoryController');
 var lang = require('./languageController');
 var dates=require('./dateController');
@@ -15,6 +16,7 @@ var news=require('./newsController');
 
 router.get('/category',category.getCategories);
 router.get('/category/:lang',category_lang.getCategories);
+router.get('/:category/category',category_cat.getCategories);
 router.get('/language',lang.getLangs);
 router.get('/date',dates.getDates);
 router.get('/category/:lang',lang_category.getCategories);

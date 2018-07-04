@@ -63,8 +63,9 @@ Category.getInitialProps = async function (context) {
   const id = context.query.id;
   const res = await fetch(`http://localhost:8080/news/category/${id}`)
   const data = await res.json()
+  
 
-  const res2 = await fetch('http://localhost:8080/category')
+  const res2 = await fetch(`http://localhost:8080/${id}/category`)
   const data2 = await res2.json()
 
   console.log(`Show data fetched. Count: ${data.length}`)
