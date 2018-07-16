@@ -1,0 +1,5 @@
+regx = /(<\/\w+>|\/>)/g;
+
+
+console.log(a.split(regx));
+

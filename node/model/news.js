@@ -1,7 +1,7 @@
 var db = require('../db/index');
 var news=function(){};
 
-var sql="select id,title,language,link,date_format(date,'%D %M, %Y') as day,date_format(date,'%H:%i') as time,image,category from updates where is_deleted=0 and image!='null' order by date desc limit 10 ";
+var sql="select id,title,description,language,link,date_format(date,'%D %M, %Y') as day,date_format(date,'%H:%i') as time,image,category,chash from updates where is_deleted=0 and image!='null' order by date desc limit 10 ";
 
 news.getNews=function(cb){
     db.getconn(function(err,conn){
