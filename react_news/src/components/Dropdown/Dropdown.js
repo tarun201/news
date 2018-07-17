@@ -9,13 +9,13 @@ const Dropdown = (props) => (
         {props.languages.map((language, index) => (
             <Aux key={index}>
                 <li>
-                    <button className={"waves-effect waves-light btn "+ classes.Btn}  onClick={props.selectedLang} value={language}>
+                    <button className={props.selectedLang===language ? "waves-effect waves-light btn "+classes.SelectedBtn:"waves-effect waves-light btn "+ classes.Btn}  onClick={props.langHandler} value={language}>
                         {language}
                     </button>
                 </li>
                 <li className="divider"></li>
             </Aux>
-        ))}
+        ))} 
     </ul>
 )
 

@@ -8,11 +8,11 @@ const Layout = (props) => (
     <Aux>
         <div>
             
-        <Nabvar selectedLang={props.selectedLang} languages={props.languages} />
+        <Nabvar selectedLang={props.selectedLang} langHandler={props.langHandler} languages={props.languages} />
         </div>
         <main className={classes.content}>
             {props.children}
-        </main>
+        </main> 
     </Aux>
 
 );

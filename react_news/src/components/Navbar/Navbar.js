@@ -22,10 +22,10 @@ const Nabvar = (props) => (
                 </div>
             </nav>
         </div >
-
+ 
         {/* <!-- Dropdown Structure --> */}
-        <Dropdown selectedLang={props.selectedLang} id="dropdown1" languages={props.languages} />
-        <Dropdown selectedLang={props.selectedLang} id="dropdown2" languages={props.languages} />
+        <Dropdown selectedLang={props.selectedLang} langHandler={props.langHandler} id="dropdown1" languages={props.languages} />
+        <Dropdown selectedLang={props.selectedLang} langHandler={props.langHandler} id="dropdown2" languages={props.languages} />
 
         {/* Side Drawer */}
         <ul className="sidenav" id="mobile-demo">

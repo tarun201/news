@@ -104,7 +104,7 @@ class Category extends React.Component {
                 )
         }
     }
-
+ 
     categoryHandler = (event) => {
         // console.log("was clicked");
         this.setState({
@@ -115,7 +115,8 @@ class Category extends React.Component {
     render() {
         return (
             <Aux>
-                <Tabs chash={this.categoryHandler} error={this.state.tabs_error} isLoaded={this.state.tabs_isLoaded} categories={this.state.tabs} />
+                {/* {console.log(this.state.news)} */}
+                <Tabs selectedCategory={this.state.selected_category} chash={this.categoryHandler} error={this.state.tabs_error} isLoaded={this.state.tabs_isLoaded} categories={this.state.tabs} />
                 <Contents error={this.state.news_error} isLoaded={this.state.news_isLoaded} news={this.state.news} />
                 {/* <p>{this.state.selected_category}</p> */}
             </Aux>

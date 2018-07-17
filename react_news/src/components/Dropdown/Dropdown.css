@@ -3,3 +3,11 @@
     width:50%;
     margin-top: 2%
 }
+
+.SelectedBtn{
+    margin-left: 20%;
+    width:50%;
+    margin-top: 2%;
+    background-color: black;
+    /* color:red; */ 
+}

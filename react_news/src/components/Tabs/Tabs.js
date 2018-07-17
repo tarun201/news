@@ -19,7 +19,7 @@ class Tabs extends React.Component {
                             {this.props.categories.map((item, index) => (
                                 <li key={index} className="tab col s3">
                                     {/* <a href={"#" + item.category}> */}
-                                        <button onClick={this.props.chash} value={item.chash} className={"btn "+classes.Btn}>
+                                        <button onClick={this.props.chash} value={item.chash} className={this.props.selectedCategory===item.chash ? "btn "+classes.SelectedBtn:"btn "+classes.Btn}>
                                             {item.category}
                                         </button>
                                         {/* </a> */}
@@ -31,7 +31,7 @@ class Tabs extends React.Component {
                 </Aux>
             );
         }
-    }
+    } 
 }
 
 export default Tabs

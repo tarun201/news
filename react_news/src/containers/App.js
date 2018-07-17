@@ -25,11 +25,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Layout  selectedLang={this.selectedLangHandler} languages={this.state.languages}>
+        <Layout selectedLang={this.state.selected_lang} langHandler={this.selectedLangHandler} languages={this.state.languages}>
           {/* <Home lang={this.state.selected_lang} /> */}
           <Category lang={this.state.selected_lang} />
         </Layout>
-      </div>
+      </div> 
     );
   }
 }
