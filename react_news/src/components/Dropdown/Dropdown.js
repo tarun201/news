@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 import classes from'./Dropdown.css'
 
 import Aux from '../../hoc/Aux/Aux'
@@ -9,9 +11,9 @@ const Dropdown = (props) => (
         {props.languages.map((language, index) => (
             <Aux key={index}>
                 <li>
-                    <button className={props.selectedLang===language ? "waves-effect waves-light btn "+classes.SelectedBtn:"waves-effect waves-light btn "+ classes.Btn}  onClick={props.langHandler} value={language}>
+                    <Link to={"/lang/"+language}><button className={props.selectedLang===language ? "waves-effect waves-light btn "+classes.SelectedBtn:"waves-effect waves-light btn "+ classes.Btn}  onClick={props.langHandler} value={language}>
                         {language}
-                    </button>
+                    </button></Link>
                 </li>
                 <li className="divider"></li>
             </Aux>

@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import classes from './Tabs.css'
 
 import Aux from '../../hoc/Aux/Aux'
+
 
 class Tabs extends React.Component {
 
@@ -14,15 +16,15 @@ class Tabs extends React.Component {
         } else {
             return (
                 <Aux>
-                    <div className={"col s12 "+classes.Div}>
+                    <div className={"col s12 " + classes.Div}>
                         <ul className="tabs">
                             {this.props.categories.map((item, index) => (
                                 <li key={index} className="tab col s3">
-                                    {/* <a href={"#" + item.category}> */}
-                                        <button onClick={this.props.chash} value={item.chash} className={this.props.selectedCategory===item.chash ? "btn "+classes.SelectedBtn:"btn "+classes.Btn}>
+                                    <Link to={"/lang/"+this.props.lang+"/"+item.chash}>
+                                        <button onClick={this.props.chash} value={item.chash} className={this.props.selectedCategory === item.chash ? "btn " + classes.SelectedBtn : "btn " + classes.Btn}>
                                             {item.category}
                                         </button>
-                                        {/* </a> */}
+                                    </Link>
                                 </li>
                             ))}
                             <br />
@@ -31,7 +33,7 @@ class Tabs extends React.Component {
                 </Aux>
             );
         }
-    } 
+    }
 }
 
 export default Tabs

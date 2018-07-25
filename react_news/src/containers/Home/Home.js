@@ -10,8 +10,10 @@ class Home extends React.Component {
         news: []
     }
 
+    
     componentDidMount() {
-        fetch("http://localhost:8080/news/lang/" + this.props.lang)
+        let lang =this.props.match.params.lang!=null ? this.props.match.params.lang:this.props.lang
+        fetch("http://localhost:8080/news/lang/" + lang)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -32,8 +34,8 @@ class Home extends React.Component {
             )
     }
     componentDidUpdate(prevProps) {
-        if (this.props.lang !== prevProps.lang) {
-            fetch("http://localhost:8080/news/lang/" + this.props.lang)
+        if (this.props.match.params.lang !== prevProps.match.params.lang) {
+            fetch("http://localhost:8080/news/lang/" + this.props.match.params.lang)
                 .then(res => res.json())
                 .then(
                     (result) => {
